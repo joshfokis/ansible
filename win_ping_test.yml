@@ -1,6 +1,5 @@
 ---
 # This playbook pings all windows hosts
 
-tasks:
-  - win_ping: 
-      data: crash
+- win_ping: 
+    data: crash
