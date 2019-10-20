@@ -1,0 +1,10 @@
+---
+# This playbook pings all windows hosts
+
+- name: Ping Windows
+  hosts: windows
+  gather_facts: false
+  tasks:
+    - name: Ping Windows
+    - win_ping: 
+      data: crash
