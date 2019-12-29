@@ -1,8 +1,7 @@
+---
 - hosts: dockerhost1
-  connection: ssh
+  connection: local
 
   tasks:
-    include_tasks: "{{ 
-      jackett.yaml
-    }}"
+    - import_tasks: jackett.yaml
   
