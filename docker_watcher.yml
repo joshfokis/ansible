@@ -2,5 +2,5 @@
 - hosts: dockerhost1
 
   tasks:
-    - import_tasks: jackett.yaml
+    - import_tasks: tasks/jackett.yaml
   
