@@ -1,0 +1,7 @@
+- hosts: dockerhost1
+  connection: ssh
+
+  tasks:
+    include_tasks: 
+     - jackett.yaml
+  
