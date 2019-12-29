@@ -2,6 +2,7 @@
   connection: ssh
 
   tasks:
-    include_tasks: 
-     - jackett.yaml
+    include_tasks: "{{ 
+      jackett.yaml
+    }}"
   
