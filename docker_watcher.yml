@@ -1,6 +1,5 @@
 ---
 - hosts: dockerhost1
-  connection: local
 
   tasks:
     - import_tasks: jackett.yaml
