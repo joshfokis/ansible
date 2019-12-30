@@ -1,6 +1,6 @@
 - name: Restart a container
   vars:
-   - secret: !vault |
+   secret: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           30333865383863343737306438333632366433323130376132323361366339383066386530313231
           6539613239313761383538323964373739366537313362350a633865323935353032353832346534
@@ -30,7 +30,7 @@
         
     volumes:
      - /home/josh/configs/vpn/:/vpn
-     - {{ secret }}
+     - "{{ secret }}"
 
     devices:
      - /dev/net/tun
