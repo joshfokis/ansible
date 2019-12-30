@@ -1,7 +1,9 @@
 ---
 - hosts: dockerhost1
-  # connection: ssh
 
   tasks:
+    - import_tasks: tasks/vpn.yaml
     - import_tasks: tasks/jackett.yaml
-  
+    - import_tasks: tasks/deluge.yaml
+    - import_tasks: tasks/radarr.yaml
+    - import_tasks: tasks/sonarr.yaml
