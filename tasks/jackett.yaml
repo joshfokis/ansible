@@ -4,7 +4,7 @@
     image: linuxserver/jackett
     state: started
     restart: yes
-    # pull: true
+    pull: true
     restart_policy: unless-stopped
     network_mode: container:vpn
     env:
