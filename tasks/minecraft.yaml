@@ -1,0 +1,47 @@
+# - name: Restart a container
+#   docker_container:
+#     name: girls-mc-server
+#     image: itzg/minecraft-server
+#     state: started
+#     pull: true
+#     restart: yes
+#     restart_policy: unless-stopped
+#     network_mode: container:vpn
+#     ports:
+#      - 25565:25565
+#     command: "--noconsole"
+#     env:
+#         PGID: "1000"
+#         PUID: "1000"
+#         TZ: "America/Chicago"
+#         EULA: TRUE
+#         TYPE: PAPER
+#         VERSION: 1.14.4
+#     volumes:
+#      - /home/josh/configs/girls-mc-server/:/data
+
+- name: Check Version Availability
+  shell: 'papermccheck.py -v {{ version }}'
+  when: update
+
+# - name: Update Version of Minecraft
+#   docker_container:
+#     name: girls-mc-server
+#     image: itzg/minecraft-server
+#     state: started
+#     pull: true
+#     restart: yes
+#     restart_policy: unless-stopped
+#     network_mode: container:vpn
+#     ports:
+#      - 25565:25565
+#     command: "--noconsole"
+#     env:
+#         PGID: "1000"
+#         PUID: "1000"
+#         TZ: "America/Chicago"
+#         EULA: TRUE
+#         TYPE: PAPER
+#         VERSION: "{{ version }}"
+#     volumes:
+#      - /home/josh/configs/girls-mc-server/:/data
