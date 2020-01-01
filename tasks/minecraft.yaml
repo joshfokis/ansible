@@ -21,7 +21,7 @@
 #      - /home/josh/configs/girls-mc-server/:/data
 
 - name: Check Version Availability
-  shell: "papermccheck.py -v {{ version }}"
+  shell: "/opt/scripts/papermccheck.py -v {{ version }}"
   when: ACTION=="update"
 
 # - name: Update Version of Minecraft
