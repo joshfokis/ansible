@@ -1,5 +1,6 @@
 ---
 - hosts: dockerhost1
-
+  remote_user: josh
+  gather_facts: false
   tasks:
     - import_tasks: tasks/minecraft.yaml
