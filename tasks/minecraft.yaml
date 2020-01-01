@@ -22,7 +22,7 @@
 
 - name: Check Version Availability
   shell: 'papermccheck.py -v {{ version }}'
-  when: ACTION==update
+  when: ACTION=="update"
 
 # - name: Update Version of Minecraft
 #   docker_container:
