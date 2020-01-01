@@ -1,5 +1,5 @@
 ---
 - hosts: dockerhost1
-  ACTION: update
+
   tasks:
     - import_tasks: tasks/minecraft.yaml
