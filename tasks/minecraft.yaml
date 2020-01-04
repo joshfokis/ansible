@@ -1,6 +1,6 @@
 ---
 - name: Archive world to generate new world
-  when: ACTION=="new world" or ACTION=="backup"
+  when: ACTION=="new-world" or ACTION=="backup"
   archive:
    path: 
    - /home/josh/configs/girls-mc-server/world/

@@ -4,4 +4,4 @@
   vars:
     FOUND: "False"
   tasks:
-    - import_tasks: tasks/minecraft.yaml`
+    - import_tasks: tasks/minecraft.yaml
