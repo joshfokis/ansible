@@ -5,8 +5,4 @@
     FOUND: "False"
     ansible_date_time: ansible_date_time
   tasks:
-    - name: Ansible date fact example
-      debug:
-        var=ansible_date_time
-      register: ansible_date_time
     - import_tasks: tasks/minecraft.yaml
