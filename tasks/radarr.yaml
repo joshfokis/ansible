@@ -1,4 +1,5 @@
 - name: Restart a container
+  when: ACTION=="refresh"
   docker_container:
     name: radarr
     image: linuxserver/radarr

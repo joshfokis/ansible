@@ -1,4 +1,39 @@
+- name: Archive world to generate new world
+  when: ACTION=="new world" or ACTION=="backup"
+  archive:
+   path: 
+   - /home/josh/configs/girls-mc-server/world/
+   - /home/josh/configs/girls-mc-server/world_nether/
+   - /home/josh/configs/girls-mc-server/world_the_end/
+   dest: "/media/c/girls-mc-server/girls-mc-backup-{{ date }}.gz"
+
+# - name: Clean Minecraft folder
+#   when: ACTION=="new world"
+#   file:
+#     path: /home/josh/configs/girls-mc-server/world/
+#     state: absent
+
+# - name: Clean Minecraft folder
+#   when: ACTION=="new world"
+#   file:
+#     path: /home/josh/configs/girls-mc-server/world_nether/
+#     state: absent
+
+# - name: Clean Minecraft folder
+#   when: ACTION=="new world"
+#   file:
+#     path: /home/josh/configs/girls-mc-server/world_the_end/
+#     state: absent
+  
+# - name: Get Current version
+#   when: ACTION=="restart" or ACTION=="new world"
+#   shell: cat /home/josh/configs/girls-mc-server/version_history.json
+#   register: version
+  
+    
+
 # - name: Restart a container
+#   when: ACTION=="restart" or ACTION=="new world"
 #   docker_container:
 #     name: girls-mc-server
 #     image: itzg/minecraft-server
@@ -16,15 +51,16 @@
 #         TZ: "America/Chicago"
 #         EULA: TRUE
 #         TYPE: PAPER
-#         VERSION: 1.14.4
+#         VERSION: "{{ version.stdout.currentVersion }}"
 #     volumes:
 #      - /home/josh/configs/girls-mc-server/:/data
 
-- name: Check Version Availability
-  shell: "/opt/scripts/papermccheck.py -v {{ version }}"
-  when: ACTION=="update"
+# - name: Check Version Availability
+#   shell: "/opt/scripts/papermccheck.py -v {{ version }}"
+#   when: ACTION=="update"
 
 # - name: Update Version of Minecraft
+#   when: ACTION=="update" and FOUND=="True"
 #   docker_container:
 #     name: girls-mc-server
 #     image: itzg/minecraft-server
