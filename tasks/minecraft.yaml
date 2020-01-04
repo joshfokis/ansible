@@ -7,11 +7,12 @@
 - name: Archive world to generate new-world
   when: ACTION=="new-world" or ACTION=="backup"
   archive:
+   format: tar
    path: 
    - /home/josh/configs/girls-mc-server/world/
    - /home/josh/configs/girls-mc-server/world_nether/
    - /home/josh/configs/girls-mc-server/world_the_end/
-   dest: "/media/c/girls-mc-server/girls-mc-backup-{{ ansible_date_time.iso8601 }}.gz"
+   dest: "/media/c/girls-mc-server/girls-mc-backup-{{ ansible_date_time.iso8601_basic }}.tar"
 
 # - name: Clean Minecraft folder
 #   when: ACTION=="new-world"
