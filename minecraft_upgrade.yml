@@ -3,6 +3,6 @@
   gather_facts: false
   vars:
     FOUND: "False"
-    datetime: ansible_date_time
+    ansible_date_time: ansible_date_time
   tasks:
     - import_tasks: tasks/minecraft.yaml
