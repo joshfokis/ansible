@@ -5,7 +5,7 @@
    - /home/josh/configs/girls-mc-server/world/
    - /home/josh/configs/girls-mc-server/world_nether/
    - /home/josh/configs/girls-mc-server/world_the_end/
-   dest: "/media/c/girls-mc-server/girls-mc-backup-{{ date }}.gz"
+   dest: "/media/c/girls-mc-server/girls-mc-backup-{{ ansible_date_time.date }}.gz"
 
 # - name: Clean Minecraft folder
 #   when: ACTION=="new world"
