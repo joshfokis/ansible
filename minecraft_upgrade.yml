@@ -1,6 +1,5 @@
 ---
 - hosts: dockerhost1
-  gather_facts: false
   vars:
     FOUND: "False"
     ansible_date_time: ansible_date_time
