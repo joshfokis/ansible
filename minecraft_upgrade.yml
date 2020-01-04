@@ -7,5 +7,5 @@
   tasks:
     - name: Ansible date fact example
       debug:
-        var=ansible_date_time.date
+        var=ansible_date_time
     - import_tasks: tasks/minecraft.yaml
