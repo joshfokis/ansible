@@ -10,8 +10,22 @@
    format: tar
    path: 
    - /home/josh/configs/girls-mc-server/world*
-  #  - /home/josh/configs/girls-mc-server/world_nether
-  #  - /home/josh/configs/girls-mc-server/world_the_end
+   - /home/josh/configs/girls-mc-server/banned-ips.json
+   - /home/josh/configs/girls-mc-server/banned-players.json
+   - /home/josh/configs/girls-mc-server/commands.yml
+   - /home/josh/configs/girls-mc-server/config
+   - /home/josh/configs/girls-mc-server/config.json
+   - /home/josh/configs/girls-mc-server/DiscordConsole.log
+   - /home/josh/configs/girls-mc-server/eula.txt
+   - /home/josh/configs/girls-mc-server/help.yml
+   - /home/josh/configs/girls-mc-server/ops.json
+   - /home/josh/configs/girls-mc-server/paper.yml
+   - /home/josh/configs/girls-mc-server/permissions.yml
+   - /home/josh/configs/girls-mc-server/server.properties
+   - /home/josh/configs/girls-mc-server/spigot.yml
+   - /home/josh/configs/girls-mc-server/usercache.json
+   - /home/josh/configs/girls-mc-server/version_history.json
+   - /home/josh/configs/girls-mc-server/whitelist.json
    dest: "/media/c/girls-mc-server/girls-mc-backup-{{ ansible_date_time.iso8601_basic }}.tar"
 
 # - name: Clean Minecraft folder
