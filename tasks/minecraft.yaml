@@ -10,7 +10,7 @@
   lineinfile:
     path: /home/josh/configs/girls-mc-server/version
     create: yes
-    regexp: "^\\d\\.\\d\\d*$"
+    regexp: "^\\d\\.\\d\\d\\.*$"
     line: "{{version}}"
 
 - name: Archive world to generate new-world
