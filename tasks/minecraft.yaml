@@ -4,6 +4,15 @@
   file:
     dest: /media/c/girls-mc-server/
     state: directory
+
+- name: Add version to file
+  when: ACTION=="upgrade"
+  lineinfile:
+    path: /home/josh/configs/girls-mc-server/version
+    state: present
+    create: yes
+    string: "{{version}}"
+
 - name: Archive world to generate new-world
   when: ACTION=="new-world" or ACTION=="backup"
   archive:
@@ -45,11 +54,11 @@
 #   file:
 #     path: /home/josh/configs/girls-mc-server/world_the_end/
 #     state: absent
-  
-# - name: Get Current version
-#   when: ACTION=="restart" or ACTION=="new-world"
-#   shell: cat /home/josh/configs/girls-mc-server/version_history.json
-#   register: version
+
+- name: Get Current version
+  when: ACTION=="restart" or ACTION=="new-world"
+  shell: cat /home/josh/configs/girls-mc-server/version
+  register: version
   
     
 
@@ -62,7 +71,6 @@
 #     pull: true
 #     restart: yes
 #     restart_policy: unless-stopped
-#     network_mode: container:vpn
 #     ports:
 #      - 25565:25565
 #     command: "--noconsole"
@@ -81,7 +89,7 @@
 #   when: ACTION=="update"
 
 # - name: Update Version of Minecraft
-#   when: ACTION=="update" and FOUND=="True"
+#   when: ACTION=="upgrade" and FOUND=="True"
 #   docker_container:
 #     name: girls-mc-server
 #     image: itzg/minecraft-server
@@ -89,7 +97,6 @@
 #     pull: true
 #     restart: yes
 #     restart_policy: unless-stopped
-#     network_mode: container:vpn
 #     ports:
 #      - 25565:25565
 #     command: "--noconsole"
