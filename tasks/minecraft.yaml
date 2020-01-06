@@ -9,7 +9,6 @@
   when: ACTION=="upgrade"
   lineinfile:
     path: /home/josh/configs/girls-mc-server/version
-    state: present
     create: yes
     regexp: "^\\d\\.\\d\\d*$"
     line: "{{version}}"
