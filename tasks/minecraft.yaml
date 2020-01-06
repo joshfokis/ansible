@@ -11,7 +11,8 @@
     path: /home/josh/configs/girls-mc-server/version
     state: present
     create: yes
-    string: "{{version}}"
+    regexp: "^\\d\\.\\d\\d*$"
+    line: "{{version}}"
 
 - name: Archive world to generate new-world
   when: ACTION=="new-world" or ACTION=="backup"
