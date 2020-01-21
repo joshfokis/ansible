@@ -2,7 +2,7 @@
 - name: Verify backup location is created
   when: ACTION=="backup" or ACTION=="new-world" or ACTION=="upgrade"
   file:
-    dest: /media/c/{{minecraft_name}}/
+    dest: "/media/c/{{minecraft_name}}/"
     state: directory
 
 - name: Archive world to generate new-world
@@ -10,36 +10,36 @@
   archive:
    format: tar
    path: 
-   - /media/c/configs/{{minecraft_name}}/
+   - "/media/c/configs/{{minecraft_name}}/"
    dest: "/media/c/{{minecraft_name}}/{{minecraft_name}}-backup-{{ ansible_date_time.iso8601_basic }}.tar"
 
 - name: Clean Minecraft folder
   when: ACTION=="new-world"
   file:
-    path: /media/c/configs/{{minecraft_name}}/world/
+    path: "/media/c/configs/{{minecraft_name}}/world/"
     state: absent
 
 - name: Clean Minecraft folder
   when: ACTION=="new-world"
   file:
-    path: /media/c/configs/{{minecraft_name}}/world_nether/
+    path: "/media/c/configs/{{minecraft_name}}/world_nether/"
     state: absent
 
 - name: Clean Minecraft folder
   when: ACTION=="new-world"
   file:
-    path: /media/c/configs/{{minecraft_name}}/world_the_end/
+    path: "/media/c/configs/{{minecraft_name}}/world_the_end/"
     state: absent
 
 - name: Get Current version
   when: ACTION=="restart" or ACTION=="new-world"
-  shell: cat /media/c/configs/{{minecraft_name}}/version
+  shell: "cat /media/c/configs/{{minecraft_name}}/version"
   register: version
   
 - name: Insert seed into config
   when: ACTION=="new-world" and SEED is defined
   lineinfile:
-    path: /media/c/configs/{{minecraft_name}}/server.properties
+    path: "/media/c/configs/{{minecraft_name}}/server.properties"
     regexp: "^level-seed:"
     line: "level-seed: {{seed}}"
 
@@ -55,7 +55,7 @@
 - name: Add version to file
   when: ACTION=="upgrade" and 
   lineinfile:
-    path: /media/c/configs/{{minecraft_name}}/version
+    path: "/media/c/configs/{{minecraft_name}}/version"
     create: yes
     regexp: "^\\d\\.\\d\\d.*$"
     line: "{{version}}"
