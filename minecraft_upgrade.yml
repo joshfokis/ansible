@@ -2,7 +2,7 @@
 - hosts: dockerhost1
   gather_facts: yes
   vars:
-    include_vars: vars/minecraft.yaml
+    import_vars: vars/minecraft.yaml
     FOUND: "False"
   tasks:
     - import_tasks: tasks/minecraft.yaml
