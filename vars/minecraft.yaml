@@ -18,4 +18,4 @@ minecraft_definition:
         TYPE: "{{ minecraft_type }}"
         VERSION: "{{ version }}"
     volumes:
-     - /home/josh/configs/{{ minecraft_name }}/:/data
+     - /media/c/configs/{{ minecraft_name }}/:/data
