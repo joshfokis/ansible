@@ -54,7 +54,7 @@
   register: FOUND
 
 - name: Add version to file
-  when: ACTION=="upgrade" and FOUND=="True"
+  when: ACTION=="upgrade" and FOUND.stdout=="True"
   lineinfile:
     path: "/media/c/configs/{{minecraft_name}}/version"
     create: yes
@@ -62,6 +62,6 @@
     line: "{{version}}"
 
 - name: Update Version of Minecraft
-  when: ACTION=="upgrade" and FOUND=="True"
+  when: ACTION=="upgrade" and FOUND.stdout=="True"
   docker_container:
     definition: "{{minecraft_definition}}"
