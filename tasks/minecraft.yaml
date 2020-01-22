@@ -64,4 +64,4 @@
 - name: Update Version of Minecraft
   when: ACTION=="upgrade" and FOUND.stdout=="True"
   docker_container:
-    definition: "{{minecraft_definition}}"
+    "{{minecraft_definition}}"
