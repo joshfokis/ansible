@@ -51,6 +51,7 @@
 - name: Check Version Availability
   shell: "/opt/scripts/papermccheck.py -v {{ version }}"
   when: ACTION=="update"
+  register: FOUND
 
 - name: Add version to file
   when: ACTION=="upgrade" and FOUND=="True"
@@ -59,7 +60,7 @@
     create: yes
     regexp: "^\\d\\.\\d\\d.*$"
     line: "{{version}}"
-    
+
 - name: Update Version of Minecraft
   when: ACTION=="upgrade" and FOUND=="True"
   docker_container:
