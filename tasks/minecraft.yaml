@@ -53,12 +53,13 @@
   when: ACTION=="update"
 
 - name: Add version to file
-  when: ACTION=="upgrade" and 
+  when: ACTION=="upgrade" and FOUND=="True"
   lineinfile:
     path: "/media/c/configs/{{minecraft_name}}/version"
     create: yes
     regexp: "^\\d\\.\\d\\d.*$"
     line: "{{version}}"
+    
 - name: Update Version of Minecraft
   when: ACTION=="upgrade" and FOUND=="True"
   docker_container:
