@@ -14,7 +14,7 @@ minecraft_definition:
         PGID: "1000"
         PUID: "1000"
         TZ: "America/Chicago"
-        EULA: TRUE
+        EULA: "TRUE"
         TYPE: "{{ minecraft_type }}"
         VERSION: "{{ version }}"
     volumes:
