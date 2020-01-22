@@ -50,7 +50,7 @@
 
 - name: Check Version Availability
   shell: "/opt/scripts/papermccheck.py -v {{ version }}"
-  when: ACTION=="update" and minecraft_type=="PAPER"
+  when: ACTION=="upgrade" and minecraft_type=="PAPER"
   register: FOUND
 
 - name: Add version to file
