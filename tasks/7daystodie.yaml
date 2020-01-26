@@ -31,7 +31,7 @@
           3130303062373432380a333131353236336166303166643239656531333961376235383036306230
           3231
     command: listplayers
-    register: telnet_out
+  register: telnet_out
 
 - name: parse output
   debug: 
