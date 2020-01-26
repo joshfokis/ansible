@@ -19,7 +19,7 @@
 #      - 26900-26902:26900-26902/udp
 
 - name: Check for players
-  when: Empty=="False"
+  # when: Empty=="False"
   telnet:
     host: localhost
     port: 8001
