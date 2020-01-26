@@ -34,8 +34,10 @@
     register: telnet_out
 
 - name: parse output
-  when: telnet_out.stdout_lines=="Total of 0 in the game"
-  register: Empty=="True"
+  debug: 
+    msg: {{telnet_out.stdout_lines}}
+  #when: telnet_out.stdout_lines=="Total of 0 in the game"
+  #register: Empty=="True"
 
 # - name: stop 7 Days to Die container
 #   when: ACTION=="7daysstart"
