@@ -22,6 +22,7 @@
   # when: Empty=="False"
   telnet:
     host: localhost
+    user: ""
     port: 8001
     password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
