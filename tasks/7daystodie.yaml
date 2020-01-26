@@ -35,7 +35,7 @@
 
 - name: parse output
   debug: 
-    msg: {{telnet_out.stdout_lines}}
+    msg: "{{telnet_out.stdout_lines}}"
   #when: telnet_out.stdout_lines=="Total of 0 in the game"
   #register: Empty=="True"
 
