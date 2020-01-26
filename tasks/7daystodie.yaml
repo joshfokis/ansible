@@ -21,7 +21,7 @@
 - name: Check for players
   # when: Empty=="False"
   telnet:
-    host: localhost
+    # host: localhost
     user: ""
     port: 8001
     password: !vault |
