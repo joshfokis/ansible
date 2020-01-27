@@ -22,7 +22,7 @@
   # when: Empty=="False"
   telnet:
     # host: localhost
-    password_prompt: "Please enter password:\n"
+    password_prompt: ""
     user: ""
     port: 8001
     password: !vault |
