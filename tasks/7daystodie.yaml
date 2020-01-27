@@ -26,10 +26,10 @@
   # when: Empty=="False"
   telnet:
     # host: localhost
-    login_prompt: "/r/n" # "Please enter password:\r\n"
+    login_prompt: "\r\n" # "Please enter password:\r\n"
     # user: ""
     port: 8001
-    prompts: "/r/n"
+    prompts: "\r\n"
     user: "{{ secret }}"
     command: 
       - listplayers
