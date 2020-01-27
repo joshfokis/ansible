@@ -34,7 +34,7 @@
     # password: 
     command: 
       - listplayers
-      # - exit
+      - exit
   register: telnet_out
 
 - name: parse output
