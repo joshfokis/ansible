@@ -30,7 +30,7 @@
     # user: ""
     port: 8001
     prompts: [""]
-    user: "{{ secret }}"
+    user: "password"
     command: 
       - listplayers
       - exit
