@@ -30,7 +30,7 @@
           3231
   telnet:
     # host: localhost
-    login_prompt: "Please enter password:"
+    login_prompt: "Please enter password:\r"
     # user: ""
     port: 8001
     user: "{{ secret }}"
