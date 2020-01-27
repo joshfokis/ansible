@@ -29,7 +29,7 @@
     login_prompt: "Please enter password:\r\n"
     # user: ""
     port: 8001
-    prompts: "[\r\n]"
+    prompts: "[]"
     user: "{{ secret }}"
     command: 
       - listplayers
