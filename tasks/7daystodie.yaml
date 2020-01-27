@@ -18,10 +18,6 @@
 #      - 26900-26902:26900-26902
 #      - 26900-26902:26900-26902/udp
 
-- name: Check secret
-  debug:
-    msg: "{{secret}}"
-
 - name: Check for players
   # when: Empty=="False"
   telnet:
@@ -29,10 +25,12 @@
     login_prompt: "Please enter password:\r\n"
     # user: ""
     port: 8001
-    prompts: [""]
+    prompts: 
+      - ""
+      - "\r\n"
     user: "password"
     command: 
-      - listplayers
+      # - listplayers
       - exit
   register: telnet_out
 
