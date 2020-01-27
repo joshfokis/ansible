@@ -22,7 +22,7 @@
   # when: Empty=="False"
   telnet:
     # host: localhost
-    # password_prompt: ""
+    prompt: ""
     user: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           33353661376631623162313266336332343063393862626361383031313936623536346532656266
