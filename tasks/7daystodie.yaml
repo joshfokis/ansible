@@ -20,8 +20,8 @@
 
 - name: Check for players
   # when: Empty=="False"
-  timeout: 120
   telnet:
+    timeout: 120
     # host: localhost
     # user: ""
     port: 8001
