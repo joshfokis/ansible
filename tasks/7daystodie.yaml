@@ -24,11 +24,9 @@
     
     # host: localhost
     user: "password"
-    login_prompt: "Please enter password:\r\n"
+    login_prompt: "\r\n"
     port: 8001
-    # prompts: 
-    #   - ""
-    #   - "\r\n"
+    prompts: "\r\n"
 
     command: 
       - listplayers
