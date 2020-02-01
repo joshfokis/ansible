@@ -1,4 +1,5 @@
 - hosts: dockerhost1
+  gather_facts: no
   vars:
     secret: !vault |
         $ANSIBLE_VAULT;1.1;AES256
