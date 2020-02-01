@@ -21,16 +21,17 @@
 - name: Check for players
   # when: Empty=="False"
   telnet:
-    timeout: 120
+    
     # host: localhost
-    # user: ""
+    user: "password"
+    login_prompt: "Please enter password:\r\n"
     port: 8001
-    prompts: 
-      - ""
-      - "\r\n"
+    # prompts: 
+    #   - ""
+    #   - "\r\n"
 
     command: 
-      # - listplayers
+      - listplayers
       - exit
   register: telnet_out
 
