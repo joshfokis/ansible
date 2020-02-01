@@ -19,18 +19,9 @@
 #      - 26900-26902:26900-26902/udp
 
 - name: Check for players
-  # when: Empty=="False"
-  telnet:
-    
-    # host: localhost
-    user: "password"
-    login_prompt: "\r\n"
-    port: 8001
-    prompts: "\r\n"
-
-    command: 
-      - listplayers
-      - exit
+  vars:
+    - port: 8001
+  shell: "/opt/scripts/telnet.py localhost {{ port }}"
   register: telnet_out
 
 - name: parse output
