@@ -13,6 +13,8 @@ minecraft_definition:
     env:
         PGID: "1000"
         PUID: "1000"
+        SEED: "{{ seed | default('') }}"
+        LEVEL: "{{ world_name | default('world') }}"
         TZ: "America/Chicago"
         EULA: "TRUE"
         TYPE: "{{ minecraft_type }}"
