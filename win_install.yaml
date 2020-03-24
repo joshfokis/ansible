@@ -1,0 +1,12 @@
+---
+- hosts: windows 
+  gather_facts: false
+  tasks:
+  - name: Create Folder.
+    win_package:
+      path: http://resources.rosettastone.com/rs/updates/application/5.0.37.0/windows/update.exe
+      product_id: "Rosetta Stone Language Learning"
+      arguments:
+        - /install
+        - /passive
+        - /norestart
