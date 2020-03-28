@@ -2,7 +2,7 @@
   gather_facts: false
   vars:
     wake_server: localhost
-    macaddress: "{{ (ansible_interfaces|first).macaddress|default(mac|default('')) }}"
+    #macaddress: "{{ (ansible_interfaces|first).macaddress|default(mac|default('')) }}"
 
   tasks:
   - name: wake up machines.
