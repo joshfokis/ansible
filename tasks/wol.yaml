@@ -1,5 +1,5 @@
 
-- name: Send magic Wake-On-Lan packet to turn on individual systems via gateway {{ wake_server }}
+- name: 'Send magic Wake-On-Lan packet to turn on individual systems via gateway {{ wake_server }}'
   win_wakeonlan:
     mac: '{{ macaddress }}'
   delegate_to: '{{ wake_server }}'
