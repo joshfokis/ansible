@@ -1,6 +1,8 @@
 - hosts: all 
   gather_facts: false
   tasks:
+  - name: wake up machines.
+    include: tasks/wol.yaml
   - name: install steam.
     win_chocolatey:
       name: steam

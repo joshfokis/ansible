@@ -1,0 +1,15 @@
+
+- hosts: computers
+  gather_facts: no
+  serial: 10
+
+  vars:
+    wake_server: localhost
+    macaddress: "{{ (ansible_interfaces|first).macaddress|default(mac|default('')) }}"
+
+  tasks:
+  - name: Send magic Wake-On-Lan packet to turn on individual systems via gateway {{ wake_server }}
+    win_wakeonlan:
+      mac: '{{ macaddress }}'
+    delegate_to: '{{ wake_server }}'
+    when: wake_server is defined
