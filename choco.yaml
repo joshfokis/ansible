@@ -1,0 +1,11 @@
+- hosts: all 
+  gather_facts: false
+  tasks:
+  - name: install steam.
+    win_chocolatey:
+      name: steam
+      state: present
+  - name: install epic games launcher.
+    win_chocolatey:
+      name: epicgameslauncher
+      state: present
