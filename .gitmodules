@@ -1,0 +1,6 @@
+[submodule "docker"]
+	path = docker
+	url = https://gitlab.theflinners.com/joshfokis/docker
+[submodule "windows"]
+	path = windows
+	url = https://gitlab.theflinners.com/joshfokis/windows
