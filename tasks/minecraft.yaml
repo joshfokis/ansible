@@ -34,8 +34,12 @@
 - name: Get Current version
   when: ACTION=="restart" or ACTION=="new-world"
   shell: "cat /media/c/configs/{{minecraft_name}}/version"
-  register: version
-  
+  register: cat_version
+
+- name: Set Version from cat_version
+  set_fact:
+    version: "{{ cat_version.stdout }}"
+
 - name: Insert seed into config
   when: ACTION=="new-world" and SEED is defined
   lineinfile:
