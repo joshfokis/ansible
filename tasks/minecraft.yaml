@@ -45,7 +45,7 @@
   lineinfile:
     path: "/media/c/configs/{{minecraft_name}}/server.properties"
     regexp: "^level-seed:"
-    line: "level-seed: {{seed}}"
+    line: "level-seed: {{SEED}}"
 
 - name: Restart a container
   when: ACTION=="restart" or ACTION=="new-world"
