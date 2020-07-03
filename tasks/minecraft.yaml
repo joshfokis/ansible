@@ -46,7 +46,7 @@
 - name: Restart a container
   when: ACTION=="restart" or ACTION=="new-world"
   docker_container:
-    definition: "{{minecraft_definition}}"
+    "{{minecraft_definition}}"
 
 - name: Check Version Availability
   shell: "/opt/scripts/papermccheck.py -v {{ version }}"
