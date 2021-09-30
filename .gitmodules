@@ -4,3 +4,6 @@
 [submodule "windows"]
 	path = windows
 	url = https://github.com/joshfokis/windows
+[submodule "digitalocean"]
+	path = digitalocean
+	url = git@github.com:joshfokis/digitalocean.git
